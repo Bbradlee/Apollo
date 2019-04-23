@@ -1,0 +1,37 @@
+﻿@model LoginModel
+@{
+    ViewBag.Title = "Create User Account";
+}
+<style>
+    html, body {
+        background-image: url("https://upload.wikimedia.org/wikipedia/commons/7/78/Dark_Rift_2012.jpg");
+        background-repeat: repeat-x;
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+    }
+</style>
+<h3 style="color:#ffffff">Create account</h3>
+<div asp-validation-summary="All" class="text-danger"></div>
+<form method="post" asp-action="Create" asp-antiforgery="true" class="form-horizontal">
+    <div class="form-group" style="color:#ffffff">
+        <label class="control-label" asp-for="UserName">User Name:</label>
+        <input class="form-control" asp-for="UserName" />
+    </div>
+    <div class="form-group" style="color:#ffffff">
+        <label class="control-label" asp-for="Email">Email:</label>
+        <input class="form-control" asp-for="Email" />
+    </div>
+    <div class="form-group" style="color:#ffffff">
+        <label class="control-label" asp-for="Password">Password:</label>
+        <input class="form-control" asp-for="Password" type="password" />
+    </div>
+    <div class="form-group">
+
+        <button type="submit" class="btn btn-primary">Create</button>
+        <button type="reset" class="btn btn-primary">Reset</button>
+        <h3 style="color:#ffffff">Login to existing account</h3>
+        <a asp-action="Login" class="btn btn-primary">Login</a>
+    </div>
+
+</form>

@@ -1,0 +1,46 @@
+﻿@model Order
+<style>
+    html, body {
+        background-image: url("https://upload.wikimedia.org/wikipedia/commons/7/78/Dark_Rift_2012.jpg");
+        background-repeat: repeat-y;
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+    }
+</style>
+<h2 style="color:white">Check out now</h2>
+<p style="color:white">Please enter your details.</p>
+<div asp-validation-summary="All" class="text-danger"></div>
+<form asp-action="Checkout" method="post">
+    <div class="form-group">
+        <label style="color:white">Name:</label><input asp-for="Name" class="form-control" />
+    </div>
+    <h3 style="color:white">Billing Address</h3>
+    <div class="form-group">
+        <label style="color:white">Line 1:</label><input asp-for="Line1" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label style="color:white">City:</label><input asp-for="City" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label style="color:white">State:</label><input asp-for="State" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label style="color:white">Zip:</label><input asp-for="Zip" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label style="color:white">Country:</label><input asp-for="Country" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label style="color:white">Credit card number:</label><input asp-for="CCN" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label style="color:white">Expiration Date:</label><input asp-for="Expire" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label style="color:white">CVC Number:</label><input asp-for="CVC" class="form-control" />
+    </div>
+    <div class="text-center">
+        <input class="btn btn-primary" type="submit" value="Complete Order" />
+    </div>
+</form>

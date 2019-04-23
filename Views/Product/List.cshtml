@@ -1,0 +1,38 @@
+﻿@model ProductsListViewModel
+@foreach (var p in Model.Products)
+{
+    @Html.Partial("ProductSummary", p)
+}
+
+<style>
+    html, body {
+        background-image: url("https://upload.wikimedia.org/wikipedia/commons/7/78/Dark_Rift_2012.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        -ms-content-zooming: none;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: scroll;
+    }
+
+    div.transbox {
+        margin: 30px;
+        background-color: #000000;
+        background: rgba(31, 29, 29, 0.50);
+        padding: 10px;
+    }
+</style>
+<body>
+
+    <div page-model="@Model.PagingInfo" page-action="List" page-classes-enabled="true"
+         page-class="btn" page-class-normal="btn-default"
+         page-class-selected="btn-primary" class="btn-group float-right">
+    </div>
+</body>
+<div page-model="@Model.PagingInfo" page-action="List"></div>
+<a class="btn btn-primary" href="http://localhost:65225/Product/List/?Page=1">1</a>
+<a class="btn btn-primary" href="http://localhost:65225/Product/List/?Page=2">2</a>
+<a class="btn btn-primary" href="http://localhost:65225/Product/List/?Page=3">3</a>
+<a class="btn btn-primary" href="http://localhost:65225/Cart?returnUrl=%2FProduct%2FList">Cart</a>

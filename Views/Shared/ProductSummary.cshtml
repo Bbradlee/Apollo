@@ -1,0 +1,66 @@
+﻿@model Product
+<style>
+    div.transbox {
+        margin: 30px;
+        background-color: #000000;
+        background: rgba(31, 29, 29, 0.60);
+        padding: 10px;
+    }
+
+    .column {
+        float: left;
+        width: 50%;
+        padding: 10px;
+    }
+
+    .row {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    img {
+        width: 300px;
+        height: 400px;
+        object-fit: scale-down;
+    }
+</style>
+<div class="transbox">
+    <div class="card m-3 rounded">
+        <div class="card-block m-2">
+            <div class="card-body">
+                <div class="row">
+                    <div class="column">
+
+                        <h3 class="card-title" style="color:#ffffff">
+                            <strong>@Model.Name</strong>
+                        </h3>
+                        <p class="card-text lead" style="color:#ffffff">
+                            <img src="@Model.Category">
+                        </p>
+                        <span class="float-left text-white rounded m-2 p-1" style="color:#ffffff">
+                            @Model.Price.ToString("c")
+                        </span>
+                        <form id="@Model.ProductID" asp-action="AddToCart"
+                              asp-controller="Cart" method="post" class="float-right m-2 p-1">
+                            <input type="hidden" asp-for="ProductID" />
+                            <input type="hidden" name="returnUrl"
+                                   value="@ViewContext.HttpContext.Request.PathAndQuery()" />
+                            <button type="submit" class="btn btn-info btn-sm float-right">
+                                Add To Cart
+                            </button>
+                        </form>
+                    </div>
+                    <div class="column">
+                        <br />
+                        <br />
+                        <br />
+                        <p class="card-text lead" style="color:#ffffff">
+                            @Model.Description
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+﻿@model Order
+<style>
+    html, body {
+        background-image: url("https://upload.wikimedia.org/wikipedia/commons/7/78/Dark_Rift_2012.jpg");
+        background-repeat: repeat-x;
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+    }
+
+    div.transbox {
+        margin: 30px;
+        background-color: #000000;
+        background: rgba(31, 29, 29, 0.50);
+        padding: 10px;
+    }
+</style>
+<div class="transbox">
+    <h2 style="color:white">Thanks!</h2>
+    <p style="color:white">
+        Thank you @User.Identity.Name for your purchase.<br>
+        Your packs will be available to you in your game.
+        Your order number is @Model.OrderID
+    </p>
+</div>

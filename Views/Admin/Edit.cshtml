@@ -1,0 +1,41 @@
+﻿@model Product
+@{
+
+}
+<style>
+    html, body {
+        background-image: url("https://upload.wikimedia.org/wikipedia/commons/7/78/Dark_Rift_2012.jpg");
+        background-repeat: repeat-x;
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+    }
+</style>
+<h3 style="color:#ffffff">Edit Product</h3>
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="ProductID" />
+    <div class="form-group" style="color:#ffffff">
+        <label asp-for="Name"></label>
+        <div><span asp-validation-for="Name" class="text-danger"></span></div>
+        <input asp-for="Name" class="form-control" />
+    </div>
+    <div class="form-group" style="color:#ffffff">
+        <label asp-for="Description"></label>
+        <div><span asp-validation-for="Description" class="text-danger"></span></div>
+        <textarea asp-for="Description" class="form-control"></textarea>
+    </div>
+    <div class="form-group" style="color:#ffffff">
+        <label asp-for="Category">Image</label>
+        <div><span asp-validation-for="Category" class="text-danger"></span></div>
+        <input asp-for="Category" class="form-control" />
+    </div>
+    <div class="form-group" style="color:#ffffff">
+        <label asp-for="Price"></label>
+        <div><span asp-validation-for="Price" class="text-danger"></span></div>
+        <input asp-for="Price" class="form-control" />
+    </div>
+    <div class="text-center">
+        <button class="btn btn-primary" type="submit">Save</button>
+        <a asp-action="Index" class="btn btn-default">Cancel</a>
+    </div>
+</form>

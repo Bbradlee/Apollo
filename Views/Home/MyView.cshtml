@@ -1,0 +1,99 @@
+﻿@{
+
+}
+<!DOCTYPE html>
+<h1 align="center" style="color:#ffffff">Apollo</h1>
+<style>
+    html, body {
+        background-image: url("https://upload.wikimedia.org/wikipedia/commons/7/78/Dark_Rift_2012.jpg");
+        background-repeat: repeat-y;
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+    }
+
+    div.transbox {
+        margin: 30px;
+        background-color: #000000;
+        border: 1px solid black;
+        background: rgba(31, 29, 29, 0.50);
+        padding: 10px;
+    }
+
+    .mySlides {
+        display: none;
+        opacity: 1;
+    }
+
+    img {
+    }
+</style>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+</head>
+<body>
+    <div class="transbox">
+        <div class="text-center">
+            <h4 style="color:#ffffff">Download today!</h4>
+            <a class="btn btn-primary" asp-controller="Account" asp-action="Login">Download</a>
+        </div>
+
+        <h2 class="w3-center" align="center" style="color:#ffffff">News</h2>
+
+        <div class="w3-content w3-section center-block" style="width:500px">
+            <img class="mySlides" src="https://image.ibb.co/cQuEh8/Out_Now_News.png" style="width:500px">
+            <img class="mySlides" src="https://image.ibb.co/gtYkpo/Engineer_News.png" style="width:500px">
+            <img class="mySlides" src="https://image.ibb.co/j0wYaT/Coop_News.png" style="width:500px">
+        </div>
+
+        <div class="text-center">
+            <h4 style="color:#ffffff">Choose what you want to see next</h4>
+            <a class="btn btn-primary" asp-action="Poll">Vote</a>
+        </div>
+        <p>
+            <font color="white">
+                <h2 align="center" style="color:#ffffff">How to play</h2>
+                <h4>Your class</h4>
+                Each player must pick a class. The classes currently available are:<br />
+                The Eideau – Your classic space lizards<br />
+                Humans – A race of simple mortals from Earth<br />
+                The Engineers – Cyborgs that are highly reliant on technology<br />
+                <h4>Your Hand</h4>
+                At the start of the game, each player draws 5 cards.<br />
+                Every turn each player automatically draws a card from their deck<br />
+                <h4>Your Base Power</h4>
+                Every class has a specific base power that they can use every 5 turns. For example, Humans can produce one unskilled colonist with 2 technology points, but not if they have 5 or less turns in the past.<br />
+                Every base starts with a certain number of health points. When those health points go to 0, you lose.<br />
+                <h4>Your Technology Level</h4>
+                The Base of each player has a certain technology level at the start of the game. At the start of every turn, your technology level increases by one.  Technology level determines the number of actions you can complete each turn.
+                <h4>Card types and Technology Levels</h4>
+                Apollo utilizes 3 distinct card types: Individuals, Devices, and Tech. Individuals cost a certain amount of Tech Level (TL) to summon. Once summoned, individuals can utilize devices and receive buffs or debuffs from tech cards.  Tech cards can also buff or debuff a base. Every time you play a card, TL is used. Also, every interaction between cards also costs TL.
+                <h4>Winning</h4>
+                To win the game you must destroy the enemies base at all costs.
+                <h4>Your Deck</h4>
+                Each player starts the game with 25 cards. After a card is destroyed or removed, it becomes rubble and can be utilized by any player.
+            </font>
+        </p>
+        <script>
+            var myIndex = 0;
+            carousel();
+
+            function carousel() {
+                var i;
+                var x = document.getElementsByClassName("mySlides");
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+                myIndex++;
+                if (myIndex > x.length) { myIndex = 1 }
+                x[myIndex - 1].style.display = "block";
+                setTimeout(carousel, 4000);
+            }
+        </script>
+    </div>
+</body>
+
+</html>

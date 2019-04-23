@@ -1,0 +1,43 @@
+﻿@model Polling
+@{
+    ViewData["Title"] = "Poll";
+}
+<h2 style="color:#ffffff">@ViewData["Title"]</h2>
+
+
+<style>
+    html, body {
+        background-image: url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/N69pMl5/stars-rotating-north-pole-star-night-sky-polaris-time-lapse_hglvfkca_thumbnail-full01.png");
+        background-repeat: repeat-x;
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+    }
+
+    div.transbox {
+        margin: 30px;
+        background-color: #000000;
+        background: rgba(31, 29, 29, 0.50);
+        padding: 10px;
+    }
+</style>
+<body>
+    <div class="transbox">
+        <form asp-action="Poll" method="post">
+            <p>
+                <font color="Black">
+                    <label style="color:#ffffff">What card type do you want next?</label>
+                    <select asp-for="Vote">
+                        <option value="">Choose an option</option>
+                        <option value="1">New Hero</option>
+                        <option value="2">New Item</option>
+                        <option value="3">New Weapon</option>
+                        <option value="4">New Ship</option>
+                    </select>
+                </font>
+                <button type="submit">Submit Choice</button>
+            </p>
+        </form>
+    </div>
+</body>
+
